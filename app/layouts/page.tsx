@@ -1,6 +1,9 @@
 import { ExternalLink } from '#/ui/external-link';
+import { getVariableValue } from '@devcycle/nextjs-sdk/server';
 
-export default function Page() {
+export default async function Page() {
+  const boolValue = await getVariableValue('boolean-flag', false);
+
   return (
     <div className="prose prose-sm prose-invert max-w-none">
       <h1 className="text-xl font-bold">Layouts</h1>
@@ -12,6 +15,7 @@ export default function Page() {
           or more layouts can also be nested.
         </li>
         <li>Try navigating between categories and sub categories.</li>
+        <li>Boolean flag value: {boolValue ? 'true' : 'false'}</li>
       </ul>
 
       <div className="flex gap-2">

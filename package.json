@@ -18,6 +18,7 @@
     "*": "prettier --write --ignore-unknown"
   },
   "dependencies": {
+    "@devcycle/nextjs-sdk": "0.0.1-beta.6",
     "@heroicons/react": "1.0.6",
     "clsx": "1.2.1",
     "date-fns": "2.29.3",

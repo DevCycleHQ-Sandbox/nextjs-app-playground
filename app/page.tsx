@@ -1,10 +1,14 @@
 import { demos } from '#/lib/demos';
 import Link from 'next/link';
+import { getVariableValue } from '@devcycle/nextjs-sdk/server';
 
-export default function Page() {
+export default async function Page() {
+  const boolValue = await getVariableValue('boolean-flag', false);
+
   return (
     <div className="space-y-8">
       <h1 className="text-xl font-medium text-gray-300">Examples</h1>
+      <h1>Boolean flag value: {boolValue ? 'true' : 'false'}</h1>
 
       <div className="space-y-10 text-white">
         {demos.map((section) => {
