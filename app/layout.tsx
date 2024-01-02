@@ -3,7 +3,8 @@ import { AddressBar } from '#/ui/address-bar';
 import Byline from '#/ui/byline';
 import { GlobalNav } from '#/ui/global-nav';
 import { Metadata } from 'next';
-import { DevCycleServersideProvider } from '@devcycle/nextjs-sdk/server';
+import { DevCycleClientsideProvider } from '@devcycle/nextjs-sdk';
+import { getClientContext } from './devcycle';
 
 export const metadata: Metadata = {
   title: {
@@ -23,7 +24,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
@@ -31,10 +32,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="[color-scheme:dark]">
       <body className="bg-gray-1100 overflow-y-scroll bg-[url('/grid.svg')] pb-36">
-        <DevCycleServersideProvider
-          sdkKey={process.env.NEXT_PUBLIC_DEVCYCLE_CLIENT_SDK_KEY ?? ''}
-          user={{ user_id: 'test-user' }}
-        >
+        <DevCycleClientsideProvider context={await getClientContext()}>
           <GlobalNav />
 
           <div className="lg:pl-72">
@@ -53,7 +51,7 @@ export default function RootLayout({
               <Byline className="fixed sm:hidden" />
             </div>
           </div>
-        </DevCycleServersideProvider>
+        </DevCycleClientsideProvider>
       </body>
     </html>
   );

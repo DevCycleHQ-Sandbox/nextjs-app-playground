@@ -1,5 +1,5 @@
 import { ExternalLink } from '#/ui/external-link';
-import { getVariableValue } from '@devcycle/nextjs-sdk/server';
+import { getVariableValue } from '../devcycle';
 
 export default async function Page() {
   const boolValue = await getVariableValue('boolean-flag', false);

@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   '@devcycle/nextjs-sdk':
-    specifier: 0.0.1-beta.7
-    version: 0.0.1-beta.7(next@14.0.3-canary.7)(react@18.2.0)
+    specifier: 0.0.1-beta.8
+    version: 0.0.1-beta.8(next@14.0.3-canary.7)(react@18.2.0)
   '@heroicons/react':
     specifier: 1.0.6
     version: 1.0.6(react@18.2.0)
@@ -1474,8 +1474,8 @@ packages:
       - debug
     dev: false
 
-  /@devcycle/nextjs-sdk@0.0.1-beta.7(next@14.0.3-canary.7)(react@18.2.0):
-    resolution: {integrity: sha512-qezkZXRiYhwxI08zJPfP55P67lPp5NYsfcJYD7X8IsMBJmfXfSe4+qxfMCkXSsVS2SXvyDnP7Vg4Ta+CIhpGGQ==}
+  /@devcycle/nextjs-sdk@0.0.1-beta.8(next@14.0.3-canary.7)(react@18.2.0):
+    resolution: {integrity: sha512-S6zQfw1Il/VI468e2fUOFAvbRHsy2u7eAo+nCbbr61ozIu5Rvs9SXi3hPTDZr01T3yhT5CkeXhgpyJmatls5hg==}
     peerDependencies:
       next: ^14.0.0
       react: ^18.2.0
