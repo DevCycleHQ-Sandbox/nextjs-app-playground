@@ -5,6 +5,7 @@ import { GlobalNav } from '#/ui/global-nav';
 import { Metadata } from 'next';
 import { DevCycleClientsideProvider } from '@devcycle/nextjs-sdk';
 import { getClientContext } from './devcycle';
+import {Suspense} from "react";
 
 export const metadata: Metadata = {
   title: {
@@ -39,7 +40,9 @@ export default async function RootLayout({
             <div className="mx-auto max-w-4xl space-y-8 px-2 pt-20 lg:px-8 lg:py-8">
               <div className="bg-vc-border-gradient rounded-lg p-px shadow-lg shadow-black/20">
                 <div className="rounded-lg bg-black">
-                  <AddressBar />
+                    {/*<Suspense>*/}
+                        <AddressBar />
+                    {/*</Suspense>*/}
                 </div>
               </div>
 
