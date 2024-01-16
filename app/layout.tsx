@@ -32,7 +32,7 @@ export default async function RootLayout({
   return (
     <html lang="en" className="[color-scheme:dark]">
       <body className="bg-gray-1100 overflow-y-scroll bg-[url('/grid.svg')] pb-36">
-        <DevCycleClientsideProvider context={await getClientContext()}>
+        <DevCycleClientsideProvider context={getClientContext()}>
           <GlobalNav />
 
           <div className="lg:pl-72">

@@ -2,6 +2,7 @@
 
 import React, { Suspense } from 'react';
 import { usePathname, useSearchParams } from 'next/navigation';
+import { useVariableValue, useVariable, useTrack } from '@devcycle/nextjs-sdk';
 
 function Params() {
   const searchParams = useSearchParams()!;
@@ -38,8 +39,17 @@ function Params() {
 export function AddressBar() {
   const pathname = usePathname();
 
+  const boolValue = useVariableValue('boolean-flag', false);
+  const boolVariable = useVariable('boolean-flag', false);
+  const trackEvent = useTrack();
+  trackEvent({ type: 'test-event' });
+
   return (
+    // <Suspense>
     <div className="flex items-center gap-x-2 p-3.5 lg:px-5 lg:py-3">
+      <div>bool value: {boolValue ? 'true' : 'false'}</div>
+      <div>bool variable: {JSON.stringify(boolVariable)}</div>
+
       <div className="text-gray-600">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -88,5 +98,6 @@ export function AddressBar() {
         </Suspense>
       </div>
     </div>
+    // </Suspense>
   );
 }

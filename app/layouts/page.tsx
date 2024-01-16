@@ -1,8 +1,10 @@
 import { ExternalLink } from '#/ui/external-link';
-import { getVariableValue } from '../devcycle';
+import { getVariableValue, getAllVariables, getAllFeatures } from '../devcycle';
 
 export default async function Page() {
   const boolValue = await getVariableValue('boolean-flag', false);
+  const allVariables = await getAllVariables();
+  const allFeatures = await getAllFeatures();
 
   return (
     <div className="prose prose-sm prose-invert max-w-none">
@@ -16,6 +18,8 @@ export default async function Page() {
         </li>
         <li>Try navigating between categories and sub categories.</li>
         <li>Boolean flag value: {boolValue ? 'true' : 'false'}</li>
+        <li>Variable values: {JSON.stringify(allVariables)}</li>
+        <li>Feature values: {JSON.stringify(allFeatures)}</li>
       </ul>
 
       <div className="flex gap-2">
